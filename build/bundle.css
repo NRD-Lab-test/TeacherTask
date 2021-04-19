@@ -3,4 +3,6 @@
 }.greenDot.svelte-14oyo7v{border-radius:50%;background-color:green
 }.greyBox.svelte-1cvmqdk{position:absolute;background-color:rgb(207, 202, 202)}.greyBox.svelte-a980so{position:absolute;background-color:rgb(207, 202, 202)}.pretty_button.svelte-1rd53y3{background-color:rgb(196, 66, 66);width:200px;height:100px;font-size:x-large;color:black;border-radius:20px;left:calc(50% + -100px);top:calc(50% + -50px);position:relative;border:solid black 5px
     }.pretty_button.svelte-1rd53y3:hover{cursor:pointer;background-color:rgb(243, 136, 136)
-    }.greyBox.svelte-a980so{position:absolute;background-color:rgb(207, 202, 202)}
+    }.greyBox.svelte-a980so{position:absolute;background-color:rgb(207, 202, 202)}.pretty_button.svelte-1rd53y3{background-color:rgb(196, 66, 66);width:200px;height:100px;font-size:x-large;color:black;border-radius:20px;left:calc(50% + -100px);top:calc(50% + -50px);position:relative;border:solid black 5px
+    }.pretty_button.svelte-1rd53y3:hover{cursor:pointer;background-color:rgb(243, 136, 136)
+    }
