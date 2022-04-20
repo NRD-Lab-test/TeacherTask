@@ -12,6 +12,7 @@
     let passedKey=false
     let writeKey=undefined
     let id = undefined
+    let archive = false
     let mobileDetectDone = false
     let gameData=`"trial","previousExploit",
             "keyPressTime",
@@ -43,6 +44,9 @@
             yearCounter+=1
         }
        else{
+           if (archive){
+               download("TeacherData.csv", data)
+           }
            gameEnd=true
        }
     }
@@ -50,9 +54,10 @@
         gameData+=data
         console.log(data)
     }
-    function getServer(serverObj,passedId){
+    function getServer(serverObj,passedId, passedArchive){
         //console.log(serverObj)
         console.log("back to page")
+        archive = passedArchive
         server = serverObj
         passedKey=true
         id = passedId
@@ -64,6 +69,18 @@
     function getMobile(mobileTruth){
         mobile = mobileTruth
         mobileDetectDone = true
+    }
+    function download(fileName, data){
+        var element = document.createElement('a');
+        element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(data));
+        element.setAttribute('download', fileName);
+      
+        element.style.display = 'none';
+        document.body.appendChild(element);
+      
+        element.click();
+      
+        document.body.removeChild(element);
     }
 </script>
 {#if !mobileDetectDone}
@@ -93,6 +110,6 @@
     -->
 {/if}
 {#if gameEnd}
-    <Redirect/>
+    <h1>The experiment is over! Thank you for your participation!</h1>
 {/if}
 

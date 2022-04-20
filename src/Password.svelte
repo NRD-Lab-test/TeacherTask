@@ -34,7 +34,7 @@
             for (const file of fileInfo){
                 await exius.writeFile(file.endpoint, file.fname, file.data)
             }
-            getServer(exius, id)
+            getServer(exius, id, archive)
         }catch(e){
             console.log(e)
             preflightError=true
