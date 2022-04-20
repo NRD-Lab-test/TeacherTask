@@ -103,22 +103,6 @@ function migrateLeftExploit(node,{replaceExploit,delay=0,duration=500}){
     async function timer(time){
         return await new Promise(r => setTimeout(r, time));
     }
-    async function Send_Data_To_Exius(params,templateKey,writeKey){
-    // [{endpoint:Horizon_CSV,data:data,fname:fname}]
-    try{
-        var fd=new FormData()
-        for ( const fileInfo of params){
-            let URL = new Blob([fileInfo.data], { type: 'text/csv;charset=utf-8;' });
-            fd.append(fileInfo.endpoint,URL,fileInfo.fname)
-        }
-        let res = await fetch("https://exius.nrdlab.org/Upload",{
-            headers:{authorization:`templateKey:${templateKey};writeKey:${writeKey}`},
-            method:"POST",
-            body: fd})
-        return await res.json()}
-    catch(e){
-        throw e
-    }}
     async function handleButton(side){
         if (keyView==false || trialHandle){
             return
@@ -335,23 +319,6 @@ function migrateLeftExploit(node,{replaceExploit,delay=0,duration=500}){
     border: solid blue 5px;
     top: max(-2.5vh,-2.5vw); 
     left: max(-2.5vw,-2.5vh); 
-    position: absolute;
-}
-.arrowKey {
-    text-align:center;
-    width:min(30vh,30vw);
-    height:min(5vh,5vw);
-    font-size:min(3vw, 3vh);
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    border: solid black min(.4vh,.4vw);
-}
-.arrowCover {
-    top:min(60vh,60vw); 
-    width:min(40vh,40vw);
-    display:flex; 
-    justify-content:center; 
     position: absolute;
 }
 .progressBar {

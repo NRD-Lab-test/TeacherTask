@@ -12,7 +12,7 @@
     export let i=0
     export let breakTruth = {truth:false}
     export let getData
-    export let writeKey
+    export let server
     export let id
     let animationCounter=0
     let practiceData=undefined
@@ -37,33 +37,17 @@
         console.log(breakTruth.truth)
     }
     async function sendGameUpstream(data){
+        (async ()=>{console.log("Successfully sent to server: " + String(await server.writeFile("teacher", `TeacherCSV_${id}.csv`,data)))})();
         getData(data)
         //modified
-        //console.log(await Send_Data_To_Exius([{endpoint:"TeacherCSV",fname:`Subject_${id}.csv`,data:data}],"Teacher_Task",writeKey))
         i+=1
     }
-    async function Send_Data_To_Exius(params,templateKey,writeKey){
-    // [{endpoint:Horizon_CSV,data:data,fname:fname}]
-    try{
-        var fd=new FormData()
-        for ( const fileInfo of params){
-            //console.log(fileInfo)
-            let URL = new Blob([fileInfo.data], { type: 'text/csv;charset=utf-8;' });
-            fd.append(fileInfo.endpoint,URL,fileInfo.fname)
-        }
-        let res = await fetch("https://exius.nrdlab.org/Upload",{
-            headers:{authorization:`templateKey:${templateKey};writeKey:${writeKey}`},
-            method:"POST",
-            body: fd})
-        return await res.json()}
-    catch(e){
-        console.log(e)
-        throw e
-    }}
+
    $: {if (i === 4){
-        console.log("Sending Response...")
-        //modified
-        //Send_Data_To_Exius([{endpoint:"TeacherResponse",fname:`Response_${id}.txt`,data:warmUp}],"Teacher_Task",writeKey)
+        console.log("Sending Response...");
+        (async ()=>{
+            console.log("Successfully sent to server: " + String(await server.writeFile("teacher", `TeacherResponse_${id}.txt`, warmUp)))
+        })()
     }}
     $: {if (i === 25){
         iterate_i()
@@ -363,7 +347,7 @@
     <MobileNavigationButtons nextInstruction={nextInstruction} previousInstruction={previousInstruction}/>
 {/if}
 {#if i === 32}
-    <MobileGame toNext={sendGameUpstream} gameString={""} writeKey={writeKey} id={id} totalBlocks={0} block={0} numTrials={10}/>
+    <MobileGame toNext={sendGameUpstream} gameString={`"trial","previousExploit","keyPressTime","trialStartTime","choice","newExploit","exploreSeen","exploitBoardClear","newExploitBoard","newExploreVisible","newExploreDeselected","newExploreMove","exploreFinishedMoving","Block"\n`} id={id} totalBlocks={0} block={0} numTrials={10} server={server}/>
 {/if}
 {#if i === 33}
     <h1 class="descriptionText">At this point you should have a firm understanding of the task. This task will go for 6 months of 30 days each. Remember to maximize your students' understanding, and good luck! To review any of the instructions click back, to continue to the task click next.

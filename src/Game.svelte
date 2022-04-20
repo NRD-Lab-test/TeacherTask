@@ -351,20 +351,20 @@ function migrateLeftExploit(node,{replaceExploit,delay=0,duration=500}){
     top:min(.5vh,.5vw);
     height:min(4vh,4vw);
     background-color: green;
-    -webkit-animation: flashGreen .5s 3;  /* Safari 4+ */
-    -moz-animation: flashGreen .5s 3;  /* Fx 5+ */
-    -o-animation: flashGreen .5s 3;  /* Opera 12+ */
-    animation: flashGreen .5s 3;  /* IE 10+, Fx 29+ */
+    -webkit-animation: flashGreen .5s 2;  /* Safari 4+ */
+    -moz-animation: flashGreen .5s 2;  /* Fx 5+ */
+    -o-animation: flashGreen .5s 2;  /* Opera 12+ */
+    animation: flashGreen .5s 2;  /* IE 10+, Fx 29+ */
 }
 .progressRight {
     top:min(.5vh,.5vw);
     height:min(4vh,4vw);
     transform:translate(-100%);
     background-color: red;
-    -webkit-animation: flashRed .5s 3;  /* Safari 4+ */
-    -moz-animation: flashRed .5s 3;  /* Fx 5+ */
-    -o-animation: flashRed .5s 3;  /* Opera 12+ */
-    animation: flashRed .5s 3;  /* IE 10+, Fx 29+ */
+    -webkit-animation: flashRed .5s 2;  /* Safari 4+ */
+    -moz-animation: flashRed .5s 2;  /* Fx 5+ */
+    -o-animation: flashRed .5s 2;  /* Opera 12+ */
+    animation: flashRed .5s 2;  /* IE 10+, Fx 29+ */
 }
 
 .progressGreen {
