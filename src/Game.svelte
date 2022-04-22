@@ -226,8 +226,9 @@ function migrateLeftExploit(node,{replaceExploit,delay=0,duration=500}){
     function sample_normal(mu,sd){
         return sd*box_mueller()+mu
     }
+    //check floor func
     function sample_normal_to_twenty(){
-        let newNorm=Math.floor(sample_normal(exploitMu,trialSd))
+        let newNorm=Math.round(sample_normal(exploitMu,trialSd))
         newNorm=Math.min(newNorm,20)
         newNorm=Math.max(newNorm,0)
         return newNorm

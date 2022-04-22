@@ -14,19 +14,7 @@
     let id = undefined
     let archive = false
     let mobileDetectDone = false
-    let gameData=`"trial","previousExploit",
-            "keyPressTime",
-            "trialStartTime",
-            "choice",
-            "newExploit",
-            "exploreSeen",
-            "exploitBoardClear",
-            "newExploitBoard",
-            "newExploreVisible",
-            "newExploreDeselected",
-            "newExploreMove",
-            "exploreFinishedMoving",
-            "Block"\n`
+    let gameData=''
     let years = 6
     let yearEnd=false
     let greenArray = []
