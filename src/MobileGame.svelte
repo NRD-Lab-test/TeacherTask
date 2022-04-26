@@ -274,6 +274,7 @@ function migrateLeftExploit(node,{replaceExploit,delay=0,duration=500}){
     -webkit-box-sizing: border-box;
     -webkit-tap-highlight-color: transparent;
     border: solid black min(.4vh,.4vw);
+    color: black;
     cursor:pointer;
 }
 .greyBox:focus {

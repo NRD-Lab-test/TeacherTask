@@ -218,6 +218,7 @@
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     border: solid black min(.4vh,.4vw);
+    color: black;
 }
 .teachingMoves {
     top:max(-10vh, -10vw); 
