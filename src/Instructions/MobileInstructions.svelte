@@ -306,7 +306,7 @@
 {/if}
 {#if i === 26}
 <MobilePracticeGame breakTruth={breakTruth} toNext={nextInstruction} trialDescriptions={[
-    "Great! We seem to have found a much better approach when we tried another new approach. Now it is your turn to try a couple of trials by yourself. Choose either the left or right arrow to make your decision.",
+    "Great! We seem to have found a much better approach when we tried another new approach. Now it is your turn to try a couple of trials by yourself. Choose either the left or right choice to make your decision.",
     "Lets try another, 3 practice trials left",
     "Lets try another, 2 practice trials left",
     "Lets try another, 1 practice trials left",

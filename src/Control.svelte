@@ -10,7 +10,6 @@
     let instructionsDone=false
     let gameEnd=false
     let passedKey=false
-    let writeKey=undefined
     let id = undefined
     let archive = false
     let mobileDetectDone = false

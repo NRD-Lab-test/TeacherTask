@@ -13,13 +13,15 @@
     top:0; 
     width:5vw; 
     height: 100%; 
-    text-align: center; 
     border: solid black min(.4vw,.4vh);
     font-size: min(2vh,2vw);
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
-    text-align: center;
+    text-align: -webkit-center;
+    justify-content: center;
+    padding: 0;
+    color:black
     }
     .buttonCover:hover{
     background-color:rgb(220, 216, 216);

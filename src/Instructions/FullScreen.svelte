@@ -27,6 +27,7 @@ async function requestFullScreen(){
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     text-align: center;
+    color: black
     }
     .buttonCover:hover{
     background-color:rgb(220, 216, 216);

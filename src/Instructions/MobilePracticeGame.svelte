@@ -232,6 +232,10 @@
     -webkit-box-sizing: border-box;
     border: solid black min(.4vh,.4vw);
     cursor:pointer;
+    color:black;
+}
+.greyBox:focus {
+    outline: none !important;
 }
 .teachingMoves {
     top:max(-10vh, -10vw); 

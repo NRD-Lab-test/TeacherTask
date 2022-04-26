@@ -23,9 +23,12 @@
     export let delayTime=1000
     export let nextButton = null
     export let nextInstruction = null
+    let canClickTime = 1500
+    let canClick=false
     let invisibleExplore=false
     let keyView=keyDisplay
     let pressed = false
+    canClickTurn()
     if (delayGoodExplore){
         delayedGoodExplore()
     }
@@ -35,8 +38,13 @@
     if (delayExploit){
         delayedExploit()
     }
+async function canClickTurn(){
+    await timer(canClickTime)
+    canClick = true
+    console.log("clickable")
+}
 function handleButton(side){
-    if (nextButton == side && !pressed){
+    if (nextButton == side && !pressed && canClick){
         pressed = true
         nextInstruction()
     }
@@ -180,6 +188,7 @@ function migrateLeftExploit(node,{replaceExploit,delay=0,duration=500}){
     -webkit-tap-highlight-color: transparent;
     border: solid black min(.4vh,.4vw);
     cursor:pointer;
+    color:black;
 }
 .greyBox:focus {
     outline: none !important;

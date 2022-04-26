@@ -97,22 +97,6 @@
     async function timer(time){
         return await new Promise(r => setTimeout(r, time));
     }
-    async function Send_Data_To_Exius(params,templateKey,writeKey){
-    // [{endpoint:Horizon_CSV,data:data,fname:fname}]
-    try{
-        var fd=new FormData()
-        for ( const fileInfo of params){
-            let URL = new Blob([fileInfo.data], { type: 'text/csv;charset=utf-8;' });
-            fd.append(fileInfo.endpoint,URL,fileInfo.fname)
-        }
-        let res = await fetch("https://exius.nrdlab.org/Upload",{
-            headers:{authorization:`templateKey:${templateKey};writeKey:${writeKey}`},
-            method:"POST",
-            body: fd})
-        return await res.json()}
-    catch(e){
-        throw e
-    }}
     async function handleKeydown(event){
         console.log(event.key)
         if (keyView==false){
