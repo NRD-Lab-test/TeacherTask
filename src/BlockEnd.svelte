@@ -76,6 +76,7 @@
     left: calc(50vw - min(20vh,20vw));
     text-align: center;
     font-size: min(1.5vh,1.5vw);
+    color: black;
 }
 .fancyButton:hover{
     box-shadow: 0 0 min(2vh,2vw) blue;
